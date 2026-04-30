@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Request - F & D Small Repairs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Print styles to make it a perfect physical intake sheet */
+        @media print {
+            body {
+                background-color: white !important;
+                padding: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-shadow-none {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            input, select, textarea {
+                border: 1px solid #cbd5e1 !important;
+                background-color: transparent !important;
+                resize: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-8 font-sans text-slate-800">
+
+    <!-- Print Button -->
+    <div class="max-w-3xl mx-auto mb-4 flex justify-end no-print">
+        <button onclick="window.print()" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded shadow flex items-center gap-2 transition-colors border-b-2 border-amber-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Print as Intake Sheet
+        </button>
+    </div>
+
+    <!-- Form Container -->
+    <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg print-shadow-none relative overflow-hidden">
+        
+        <!-- Decorative Header Bars -->
+        <div class="absolute top-0 left-0 w-full h-3 bg-blue-900"></div>
+        <div class="absolute top-3 left-0 w-full h-1 bg-amber-600"></div>
+
+        <div class="mb-8 mt-6 text-center flex flex-col items-center">
+            <!-- Logo Centered -->
+            <img src="logo.jpg" alt="F & D Small Repairs Logo" class="h-20 w-20 rounded-full border-2 border-slate-200 shadow-sm mb-4" onerror="this.onerror=null; this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=F%26D';">
+            
+            <h1 class="text-3xl font-extrabold text-blue-900 tracking-tight">F & D Small Repairs</h1>
+            <h2 class="text-xl font-bold text-amber-600 mt-1 uppercase tracking-widest text-sm">Free Estimate Request</h2>
+            <p class="text-slate-500 text-sm mt-3 max-w-lg mx-auto">Please provide as much detail as possible so we can give you an accurate, flat-rate quote.</p>
+        </div>
+
+        <form action="#" method="POST" class="space-y-8">
+            
+            <!-- Section 1: Customer Details -->
+            <div>
+                <h3 class="text-lg font-bold text-blue-900 border-b-2 border-amber-500 pb-2 mb-4">1. Contact Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Full Name</label>
+                        <input type="text" class="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="Jane Neighbor">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
+                        <input type="tel" class="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="(555) 000-0000">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Project Address</label>
+                        <input type="text" class="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="123 Main St, City, State">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Project Details -->
+            <div>
+                <h3 class="text-lg font-bold text-blue-900 border-b-2 border-amber-500 pb-2 mb-4">2. Project Details</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Primary Type of Service Needed</label>
+                        <select class="w-full p-2 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                            <option value="" disabled selected>Select a category...</option>
+                            <option value="fence">Fence/Gate Repair or Installation</option>
+                            <option value="deck">Deck or Deck Stair Repair</option>
+                            <option value="siding">Exterior Siding Repair</option>
+                            <option value="interior">One-Day Interior Fix (Trim, Drywall, Assembly)</option>
+                            <option value="custom">Custom Woodwork (Planter Boxes, Shelving)</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Project Description & Dimensions</label>
+                        <p class="text-xs text-slate-500 mb-2">Please describe the issue. E.g., "Two wooden fence posts are rotted and leaning" or "Need a 4x2ft custom cedar planter box."</p>
+                        <textarea rows="4" class="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-amber-500 focus:outline-none" placeholder="Describe your project here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Logistics -->
+            <div>
+                <h3 class="text-lg font-bold text-blue-900 border-b-2 border-amber-500 pb-2 mb-4">3. Job Logistics</h3>
+                
+                <div class="space-y-5">
+                    <!-- Materials -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Who is providing the materials? (Wood, hardware, paint, etc.)</label>
+                        <div class="flex flex-col space-y-2">
+                            <label class="flex items-center text-sm text-slate-700">
+                                <input type="radio" name="materials" class="mr-2 text-amber-600 focus:ring-amber-600">
+                                I need F & D to purchase and bring the materials.
+                            </label>
+                            <label class="flex items-center text-sm text-slate-700">
+                                <input type="radio" name="materials" class="mr-2 text-amber-600 focus:ring-amber-600">
+                                I already have the materials on-site.
+                            </label>
+                            <label class="flex items-center text-sm text-slate-700">
+                                <input type="radio" name="materials" class="mr-2 text-amber-600 focus:ring-amber-600">
+                                Unsure / Let's discuss it.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Haul-Away -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Will there be heavy debris or old wood/concrete to dispose of?</label>
+                        <p class="text-xs text-slate-500 mb-2 italic">*Note: We charge a small, flat dump fee if we need to haul away old debris.*</p>
+                        <div class="flex space-x-6">
+                            <label class="flex items-center text-sm text-slate-700">
+                                <input type="radio" name="haulaway" value="yes" class="mr-2 text-amber-600 focus:ring-amber-600">
+                                Yes
+                            </label>
+                            <label class="flex items-center text-sm text-slate-700">
+                                <input type="radio" name="haulaway" value="no" class="mr-2 text-amber-600 focus:ring-amber-600">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Photos (For digital use) -->
+                    <div class="no-print pt-2">
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Upload Photos of the Project (Optional but highly recommended)</label>
+                        <input type="file" multiple class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-900 hover:file:bg-blue-100">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-6 no-print">
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded shadow-lg transition-colors text-lg border-b-4 border-amber-600">
+                    Request My Free Quote
+                </button>
+                <p class="text-center text-xs text-slate-500 mt-3">We will get back to you within 24 hours to discuss your project!</p>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
